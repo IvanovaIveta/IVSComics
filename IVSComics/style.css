@@ -1,0 +1,408 @@
+﻿html{
+    height: 100%;
+}
+body{
+	font-family:arial, helvetica, sans-serif; 
+	background-color:#fff;
+	margin:0;
+	height:100%;
+}
+
+/* Цветове */
+.lightgray{background-color:#D3D3D3;}
+.darkgray{background-color:#A9A9A9;}
+.gray{background-color:#808080;}
+.dimgray{background-color:#696969;}
+.vdarkgray{background-color:#333333;}
+.white{background-color:#fff;}
+.black{background-color:#000;}
+
+/* Изображения */
+img{
+	height: auto;
+	width:100%;
+	display:block;
+}
+
+/* Отстояние навътре */
+.inner-space{padding:1.23%;}
+
+/* Отстояния навън */
+.horizontal-space {margin-bottom:1.23%;}
+.vertical-space {margin-left:1.23%;}
+
+/* Характеристики на блоковете */
+* {box-sizing: border-box;}
+
+[class*="block"]::after {
+    content: "";
+    clear: both;
+	display: block;
+}
+
+/* Характеристики на клетките */
+[class*="cell"] 
+{
+	float: left;
+	display: inline-block;
+}
+
+
+/* Меню с икони */
+.icon-bar {
+    width: 100%;
+    text-align: center;
+    background-color: #696969;
+    overflow: auto;
+	margin-top:5px;
+}
+
+.icon-bar a {
+    width: 25%;
+    padding: 12px 0;
+    float: left;
+    transition: all 0.3s ease;
+    color: white; 
+	font-size:16px;
+}
+
+.icon-bar a:hover {
+    background-color: #333;
+}
+
+.active {
+    background-color: #ff9900;
+}
+
+/* Изображение с ефект */
+.container-img {
+  position: relative;
+}
+.icon-audio {
+	position: absolute;
+	top: 20%;
+	left: 5%;
+	color: white; 
+	height: 100%;
+}
+.comic-img{
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0,0,0,0.5);
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  transition: .5s ease;
+}
+
+.container-img:hover .overlay {
+  height: 30px;
+}
+
+.text-img {
+  white-space: nowrap; 
+  color: white;
+  font-size: 1em;
+  position: absolute;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+/* Звук */
+button{
+   cursor:pointer;
+   display:inline-block;
+   padding:0 20px ;
+   background: #333333;
+   border-radius: 5px;
+   color: #fff;
+   text-transform:uppercase;
+	height:100%;
+   
+}
+
+/* Номериране на страници */
+ul.pagination {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+}
+
+ul.pagination li {display: inline;}
+
+ul.pagination li a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+}
+
+ul.pagination li a.active {
+    background-color: #ff9900;
+    color: white;
+}
+
+ul.pagination li a:hover:not(.active) {background-color: #ddd;}
+ul.pagination li a:hover.circle{background-color: #fff;}
+
+
+/* Медийни заявки - ширина на динамична клетка 
+
+---------------------------------------------------------------
+
+ xs - за мобилни телефони с максимална ширина 767px */
+
+@media (max-width: 767px){
+	.dcell-xs-1 {width: 7.2%;}
+	.dcell-xs-2 {width: 15.64%;}
+	.dcell-xs-3 {width: 24.07%;}
+	.dcell-xs-4 {width: 32.51%;}
+	.dcell-xs-5 {width: 40.95%;}
+	.dcell-xs-6 {width: 49.38%;}
+	.dcell-xs-7 {width: 57.82%;}
+	.dcell-xs-8 {width: 66.26%;}
+	.dcell-xs-9 {width: 74.69%;}
+	.dcell-xs-10 {width: 83.13%;}
+	.dcell-xs-11 {width: 91.56%;}
+	.dcell-xs-12 {width: 100%;margin-left:0;}
+	
+	.comic-page{
+	margin: 0 auto;
+	text-align:center;
+	height:100%;
+	width: 100%;}
+	
+	.comic{height: auto;}
+	
+	.headerwrap{
+	width: 100%;
+	margin: 0 auto;
+	padding:0;}
+	
+	.header{height: auto;}
+	
+	.sitename h1,p{
+		margin: 0;
+		padding: 0;}
+	
+	.sitename h1{
+		font-size:1.8em;
+		font-weight: bold;
+		font-family: 'Monoton', cursive;
+		line-height:1.8em;
+		margin-top:0px;}
+		
+	.sitename p{
+		margin-top:-10px;
+		font-size:1em;
+		font-family: 'Lakki Reddy', cursive;}
+	.pagination{font-size:0.7em;}
+	.icon-bar a {font-size:10px;}
+	button{font-size:0.7em;}
+	i.icon-audio{display: none;}
+	.container-img:hover .overlay {
+		height: 30px;
+	}	
+	.footer{
+		height: auto;
+		text-align:center;
+		padding:5px;
+		font-size:0.6em;
+		color: white;}
+}
+
+/* sm - за таблети с минимална ширина 767px и максимална ширина 991px */
+
+@media (min-width: 768px) and (max-width: 991px){
+	.dcell-sm-1 {width: 7.2%;}
+	.dcell-sm-2 {width: 15.64%;}
+	.dcell-sm-3 {width: 24.07%;}
+	.dcell-sm-4 {width: 32.51%;}
+	.dcell-sm-5 {width: 40.95%;}
+	.dcell-sm-6 {width: 49.38%;}
+	.dcell-sm-7 {width: 57.82%;}
+	.dcell-sm-8 {width: 66.26%;}
+	.dcell-sm-9 {width: 74.69%;}
+	.dcell-sm-10 {width: 83.13%;}
+	.dcell-sm-11 {width: 91.56%;}
+	.dcell-sm-12 {width: 100%;margin-left:0;}
+	
+	.comic-page{
+	margin: 0 auto;
+	text-align:center;
+	height:auto;
+	width: 100%;}
+	
+	.comic{height: auto;}
+	
+	.headerwrap{
+	width: 100%;
+	margin: 0 auto;
+	padding:0;}
+	
+	.header{height: auto;}
+	
+	.sitename h1,p{
+		margin: 0;
+		padding: 0;}
+	
+	.sitename h1{
+		font-size:2.5em;
+		font-weight: bold;
+		font-family: 'Monoton', cursive;
+		line-height:2em;
+		margin-top:-15px;}
+		
+	.sitename p{
+		margin-top:-25px;
+		font-size:1.3em;
+		font-family: 'Lakki Reddy', cursive;}
+	.icon-bar a {font-size:14px;}
+	.pagination{font-size:0.8em;}
+	.container-img:hover .overlay {
+	  height: 50px;
+	}
+	.footer{
+		height: auto;
+		text-align:center;
+		padding:10px;
+		font-size:0.7em;
+		color: white;}
+}
+
+/* md - за компютри с минимална ширина 992px и максимална ширина 1199px */
+
+@media (min-width: 992px) and (max-width: 1199px){
+	.dcell-md-1 {width: 7.2%;}
+	.dcell-md-2 {width: 15.64%;}
+	.dcell-md-3 {width: 24.07%;}
+	.dcell-md-4 {width: 32.51%;}
+	.dcell-md-5 {width: 40.95%;}
+	.dcell-md-6 {width: 49.38%;}
+	.dcell-md-7 {width: 57.82%;}
+	.dcell-md-8 {width: 66.26%;}
+	.dcell-md-9 {width: 74.69%;}
+	.dcell-md-10 {width: 83.13%;}
+	.dcell-md-11 {width: 91.56%;}
+	.dcell-md-12 {width: 100%;margin-left:0;}
+	
+	.comic-page{
+	margin: 0 auto;
+	text-align:center;
+	height:auto;
+	width: 90%;}
+	
+	.comic{height: auto;}
+	
+	.headerwrap{
+	width: 90%;
+	margin: 0 auto;
+	padding:0;}
+	
+	.header{height: auto;}
+	
+	.sitename h1,p{
+		margin: 0;
+		padding: 0;}
+	
+	.sitename h1{
+		font-size:2.5em;
+		font-weight: bold;
+		font-family: 'Monoton', cursive;
+		line-height:2em;
+		margin-top:-15px;}
+		
+	.sitename p{
+		margin-top:-25px;
+		font-size:1.3em;
+		font-family: 'Lakki Reddy', cursive;}
+	.container-img:hover .overlay {
+	  height: 10%;
+	}
+	.footer{
+		height: auto;
+		text-align:center;
+		padding:10px;
+		font-size:0.9em;
+		color: white;}
+}
+
+/* lg - за hd компютри с минимална ширина 1200px */
+
+@media (min-width: 1200px){
+	.dcell-lg-1 {width: 7.2%;}
+	.dcell-lg-2 {width: 15.64%;}
+	.dcell-lg-3 {width: 24.07%;}
+	.dcell-lg-4 {width: 32.51%;}
+	.dcell-lg-5 {width: 40.95%;}
+	.dcell-lg-6 {width: 49.38%;}
+	.dcell-lg-7 {width: 57.82%;}
+	.dcell-lg-8 {width: 66.26%;}
+	.dcell-lg-9 {width: 74.69%;}
+	.dcell-lg-10 {width: 83.13%;}
+	.dcell-lg-11 {width: 91.56%;}
+	.dcell-lg-12 {width: 100%;margin-left:0;}
+	
+	.comic-page{
+	margin: 0 auto;
+	text-align:center;
+	height:auto;
+	width: 72%;}
+	
+	.comic{height: auto;}
+	
+	.headerwrap{
+	width: 72%;
+	margin: 0 auto;
+	padding:0;}
+	
+	.header{height:auto;}
+	
+	.sitename h1,p{
+		margin: 0;
+		padding: 0;}
+	
+	.sitename h1{
+		font-size:2.5em;
+		font-weight: bold;
+		font-family: 'Monoton', cursive;
+		line-height:2em;
+		margin-top:-15px;}
+		
+	.sitename p{
+		margin-top:-25px;
+		font-size:1.3em;
+		font-family: 'Lakki Reddy', cursive;}
+	.container-img:hover .overlay {
+	  height: 10%;
+	}
+	.footer{
+		height: auto;
+		text-align:center;
+		padding:10px;
+		font-size:0.9em;
+		color: white;}
+}
+
+
+
+
+
+
+
+
+
+
+
